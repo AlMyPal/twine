@@ -1,0 +1,126 @@
+<tw-storydata name="The Old House" startnode="1" creator="Twine" creator-version="2.2.1" ifid="3A854C11-D284-45AC-9D64-0ABFB54926C4" zoom="1" format="Harlowe" format-version="2.1.0" options="" hidden><style role="stylesheet" id="twine-user-stylesheet" type="text/twine-css">
+
+
+
+</style><script role="script" id="twine-user-script" type="text/twine-javascript">
+
+
+
+</script><tw-passagedata pid="1" name="Start" tags="place" position="860,372" size="100,100">Weeds and tall grass are beginning to overtake the trail leading up to your old house.
+
+The [[front yard]] of the house is just up ahead.</tw-passagedata><tw-passagedata pid="2" name="front yard" tags="place" position="860,524" size="100,100">You&#39;re standing to the west of the house you grew up in as a child.
+
+A small chimney juts out from the top of the one-story house. Some of the windows are boarded up, but the door has been taken off its hinges.
+
+(if: $tapeCoveringDoor is true)[Tape is stretched over the entrance of the building.
+
+(link: &quot;&gt;Remove the tape covering the door.&lt;&quot;)[(set: $tapeCoveringDoor = false)(goto: &quot;front yard&quot;)]](else:)[Bits of tape are on the ground where you left them after pulling the tape away from the door.
+
+[[//Walk through the open door.//|living room]]]
+</tw-passagedata><tw-passagedata pid="3" name="living room" tags="" position="860,674" size="100,100">You&#39;re standing in the living room. The carpet is ragged and stained with what appears to be coffee in a few places.
+
+To the east, there&#39;s a hallway. To the south is the kitchen. To the west is the door leading outside.
+
+To the left of the open doorway is a door, leaned up against the wall.
+
+[[//Walk out into the front yard.//|front yard]]
+[[//Walk into the hallway.//|hallway]]
+[[//Walk into the kitchen.//|kitchen]]
+[[&gt;Look at the door.&lt;|front door]]</tw-passagedata><tw-passagedata pid="4" name="rear window" tags="" position="1044,404" size="100,100">(set: $birds to (a: &quot;cardinal&quot;, &quot;sparrow&quot;, &quot;chickadee&quot;, &quot;titmouse&quot;, &quot;blue jay&quot;))
+Through the window you can see a pine tree.(if: (either:true, false, false))[ A (print: (either: ...$birds)) takes a perch on a branch of the pine tree before chirping and then flying off.]</tw-passagedata><tw-passagedata pid="5" name="bathroom" tags="place" position="1041,537" size="100,100">You&#39;re standing in the bathroom.
+
+(display: &quot;rear window&quot;)
+The door to the west leads back into the hallway.
+
+[[//Walk back out into the hallway.//|hallway]]</tw-passagedata><tw-passagedata pid="6" name="hallway" tags="place" position="1041,687" size="100,100">You&#39;re standing in the hallway. It seems that the gaudy paintings hanging crooked on the south wall were not deemed valuable enough to take during whatever exodus took place here.
+
+Along the north wall are two doors leading to the bedrooms: yours and your parent&#39;s. To the east is the bathroom. To the west is the living room.
+
+[[//Walk to my room.//|my room]]
+[[//Walk to my parents&#39; room.//|parent&#39;s room]]
+[[//Walk to the bathroom.//|bathroom]]
+[[//Walk to the living room.//|living room]]</tw-passagedata><tw-passagedata pid="7" name="kitchen" tags="" position="860,824" size="100,100">You&#39;re standing in the kitchen. There&#39;s only a large empty space where the breakfast nook used to be.
+
+[[//Walk north, into the living room.//|living room]]
+[[//Go through the side door into the backyard.//|backyard]]</tw-passagedata><tw-passagedata pid="8" name="window" tags="" position="1165,405" size="100,100">Through the window you can see an oak tree.</tw-passagedata><tw-passagedata pid="9" name="my room" tags="" position="1186,829" size="100,100">You&#39;re standing in your childhood bedroom. On the ground is a stuffed animal.
+
+The door to the south leads back into the hallway.
+
+[[//Walk out into the hallway.//|hallway]]
+[[&gt;Examine the stuffed animal.&lt;|stuffed animal]]</tw-passagedata><tw-passagedata pid="10" name="parent&#39;s room" tags="" position="1043,826" size="100,100">You&#39;re standing in your parents&#39; bedroom.
+(display: &quot;rear window&quot;)
+
+The door to the south leads back into the hallway.
+
+[[//Walk out into the hallway.//|hallway]]</tw-passagedata><tw-passagedata pid="11" name="front door" tags="object" position="723,676" size="100,100">The brass fixtures on the door are tarnished and worn, and the once-vivid red paint has faded and chipped.(if: $cellarKey is not true)[ There&#39;s a key on a lanyard hanging from the door handle.
+
+(link: &quot;&gt;Take the key.&lt;&quot;)[(set: $cellarKey = true)(goto: &quot;front door&quot;)]]
+
+[[//Walk away from the door.//|living room]]</tw-passagedata><tw-passagedata pid="12" name="backyard" tags="" position="860,974" size="100,100">You&#39;re standing in the backyard. There are a few pine trees scattered around. There are a few clumps of grass, but there&#39;s mostly bare dirt.
+
+A side door leads back into the kitchen. Along the back of the house is a large double door which leads into the cellar(if: $cellarOpen is true)[. A padlock lies on the ground next to the open cellar door.](else:)[, but the door is padlocked shut.]
+
+[[//Walk back inside to the kitchen.//|kitchen]]
+(if: $cellarOpen is true)[[[//Go down into the cellar.//|cellar]]](else-if: $cellarKey is true)[(link: &quot;&gt;Unlock the cellar.&lt;&quot;)[(set: $cellarOpen = true)(goto: &quot;backyard&quot;)]]</tw-passagedata><tw-passagedata pid="13" name="cellar" tags="" position="1004,972" size="100,100">You&#39;re standing in the cellar. Skittering around the corners are all kinds of chitinous beasts. You imagine that surely there must be an arachnologist somewhere who could muster a dissertation out of the immense biodiversity of spiders in this tiny room.
+
+You don&#39;t particularly fancy yourself an arachnologist, though.
+
+There&#39;s a ladder which leads up into the backyard.
+
+[[//Climb up the ladder.//|backyard]]</tw-passagedata><tw-passagedata pid="14" name="stuffed animal" tags="" position="1570,340" size="100,100">You&#39;re holding an old stuffed (if: $animal is &quot;empty&quot;)[animal. It&#39;s kind of hard to tell now, but you remember clearly that it used to be a... (link: &quot;salamander&quot;)[(set: $animal = &quot;salamander&quot;)(goto:&quot;stuffed animal&quot;)]? Or maybe it was a... (link: &quot;fox&quot;)[(set: $animal = &quot;fox&quot;)(goto:&quot;stuffed animal&quot;)]? A (link: &quot;gorilla&quot;)[(set: $animal = &quot;gorilla&quot;)(goto:&quot;stuffed animal&quot;)]? Hm.](else:)[(print: $animal). Looking at it brings back some [[painful memories|choices]].]
+
+[[&gt;Put the plush animal down.&lt;|my room]]</tw-passagedata><tw-passagedata pid="15" name="choices" tags="" position="1571,492" size="100,100">Screaming matches between the two of them break out at the drop of a hat. They tend to last for hours and are seemingly always about something you&#39;ve done.
+
+Tonight you&#39;re hunkered down in your room, holding on tightly to your stuffed ($animal) and listening to the indistinct sound of another argument. You catch one choice tidbit that cuts through the dull rumble: //&quot;...and this place is absolutely filthy! I can&#39;t walk across the room without stepping on another toy!&quot;//
+
+Not long after, the fighting dies down for the night. The creaks and groans as the building settles feel like an architectural sigh of relief.
+
+The next day, you wake up early and...
+[[+...play with your toys and try not to think about the fight.+|play]]
+[[+...try to collect all your toys into the chest in the living room.+|clean]]</tw-passagedata><tw-passagedata pid="16" name="Startup Variables" tags="startup" position="716,371" size="100,100">{
+(set: $tapeCoveringDoor to true)
+(set: $cellarKey to false)
+(set: $animal to &quot;empty&quot;)
+}</tw-passagedata><tw-passagedata pid="17" name="play" tags="" position="1496,642" size="100,100">Ignoring the echoing memory of your parents yelling at each other, you immerse yourself in the riveting chronicle of the stuffed animal clan as they try to navigate the difficulties of living in the Democratic People&#39;s Republic of The Sky Kingdom.
+
+Comrade (upperfirst: $animal) seems to have sunken most of their inheritance in buying a sky ship to fulfill their dream of becoming a sky pirate, but finds the challenges of aerial brigandry to be less glamorous than they imagined after their crew mutinies several skymiles outside their port of departure. Comrade (upperfirst: $animal) is just about to give up hope, when--there&#39;s screaming outside the brig! Are loyal crew members coming to the rescue? It&#39;s impossible to make out much, except that it&#39;s something about...
+
+...no, it&#39;s not your loyal sky pirate friends challenging the mutineers, it&#39;s your parents arguing again: //&quot;...and why do I always have to be the one that makes breakfast?&quot;//
+
+What would noble Comrade (upperfirst: $animal) do? They would probably...
+[[+...break out of the brig and take control of the ship.+|escape]]
+[[+...try to make breakfast for your parents.+|cook]]</tw-passagedata><tw-passagedata pid="18" name="clean" tags="" position="1646,642" size="100,100">You spend the few hours before your parents wake up cleaning up the living room, moving all your scattered toys into the toy bin and even making sure to carefully go around dusting. You consider vacuuming before deciding against it in the interest of not waking your parents from their Saturday slumber.
+
+After finishing, you...
+[[+...find something to put your parents in a good mood to start their day.+|coffee]]
+[[+...watch cartoons.+|teevee]]</tw-passagedata><tw-passagedata pid="19" name="escape" tags="" position="1337,791" size="100,100">A huge explosion rocks the hallway--the improvised breaching charge Comrade (upperfirst: $animal) fashioned out of a twig and a bowl from the galley worked fabulously! The smell of coffee hangs heavy in the air.
+
+Outside, the mutineers have all been tied up. &quot;Why, Comrade (upperfirst: $animal),&quot; exclaims Comrade Gecko, &quot;we were just coming to rescue you!&quot;
+
+The touching reunion is interrupted by shouts coming from above deck. //&quot;...why didn&#39;t you tell me we were out of eggs while I was at the store? I explicitly asked you if we had eggs!&quot;//
+
+Ah. You leave your toys where they are in the living room.
+
+[[You go to your room to read.|read]]</tw-passagedata><tw-passagedata pid="20" name="cook" tags="" position="1508,788" size="100,100">Having little culinary training, and no explicit permission to use the stovetop, you manage to make something resembling a salad, and a pot of coffee.
+
+Before long, your parents come out of their bedroom and give a surprised thank you for your attempt to make a morning meal.
+
+You all mostly eat in silence, except for a few strained comments on how delicious the salad is with the coffee. You get a pat on the head as a reward and one of your parents takes everyone&#39;s dishes away to clean them.
+
+[[You go to your room to read.|read]]</tw-passagedata><tw-passagedata pid="21" name="coffee" tags="" position="1674,789" size="100,100">The siren scent of fresh coffee brings your parents to life, and they come shambling to the kitchen table. They give thanks to you and quiet glances to each other as they sip at the blessed consciousness-liquid.
+
+You all eat a bowl of cereal together. Nobody talks much. You finish first and wash your bowl in the sink.
+
+[[You go to your room to read.|read]]</tw-passagedata><tw-passagedata pid="22" name="teevee" tags="" position="1893,788" size="100,100">A sequence of glowing images is produced on the television set, which your brain perceives as motion. It&#39;s a rerun, but there&#39;s nothing else on. The one after that is new, though, and you drink hungrily from the cup of children&#39;s televised entertainment.
+
+Clad in robes and mumbling something about caffeine, two slouching humans drift past you from the direction of the room your parents sleep in. You turn the volume down a little, even though this is a really good part near the end of the episode.
+
+//&quot;Can you turn that off? Those shrill voices give me a headache.&quot;//
+
+Not a question, but a demand in the garb of a question. This is getting to the really good part, but you make a mental note that there&#39;ll be reruns all week.
+
+[[You go to your room to read.|read]]</tw-passagedata><tw-passagedata pid="23" name="read" tags="" position="1583,958" size="100,100">You try your best to focus on the book you&#39;ve been reading for school. It&#39;s only with difficulty that you&#39;re able to get past the first paragraph, though, you seem to keep reading and rereading the same thing and staring blankly at the page as you listen to the escalating argument between your parents outside.
+
+There&#39;s a loud crash, and stunned silence. No injuries except the mug of coffee that was dashed across the room, you would later find out.
+
+[[You&#39;re standing in your room.|my room]]</tw-passagedata></tw-storydata>

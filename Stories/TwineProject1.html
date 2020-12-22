@@ -1,0 +1,674 @@
+<tw-storydata name="TwineProject1" startnode="1" creator="Twine" creator-version="2.2.1" ifid="792B07C4-6C7D-4721-9096-4778D63B9302" zoom="1" format="Harlowe" format-version="2.1.0" options="" hidden><style role="stylesheet" id="twine-user-stylesheet" type="text/twine-css">
+
+</style><script role="script" id="twine-user-script" type="text/twine-javascript">
+
+</script><tw-passagedata pid="1" name="start" tags="" position="617,291" size="100,100">It&#39;s late at night and driving down Mt. Mountain is getting really boring. I should do something exciting.
+
+(if: $badDecisions0 is not true)[(link: &quot;&gt;Speed up to experience speed&lt;&quot;)[(set: $badDecisions0 = true)(goto: &quot;start&quot;)]]
+(if: $badDecisions1 is not true)[(link: &quot;&gt;Take off seatbelt to embrace freedom&lt;&quot;)[(set: $badDecisions1 = true)(goto: &quot;start&quot;)]]
+(if: $badDecisions2 is not true)[(link: &quot;&gt;Turn up music to feel music&lt;&quot;)[(set: $badDecisions2 = true)(goto: &quot;start&quot;)]]
+
+(if: ($badDecisions0 is true) and ($badDecisions1 is true) and ($badDecisions2 is true)) [(goto: &quot;disaster&quot;)]
+
+</tw-passagedata><tw-passagedata pid="2" name="disaster" tags="" position="493,427" size="100,100">Oh no! A family of deers and other woodland creatures appear out of no where!
+
+I swerve to the left, losing control of my car for I was experienceing speed!
+
+As I tumble towards the left, I tried quick dialing 911 but the operator couldn&#39;t hear me over my sick jams!
+
+Finally I crashed into a tree and burst out my windshield since I wasn&#39;t wearing a seatbelt!
+
+If only my brain didn&#39;t make me do all those [[bad decisions]]!
+</tw-passagedata><tw-passagedata pid="3" name="bad decisions" tags="" position="471,572" size="100,100">All my choices led me to be flung out my car, off the cliff of Mt. Mountain. 
+
+As I fall towards my doom, something comes into view.
+
+It seems to be earth itself, but three distinct areas. There is a snowy area towards the left, a city straight down, and a jungle towards the right.
+I&#39;m going to land eventually so might as well pick a place to land to and hopefully live. 
+So what will it be? The [[snow]], [[jungle]], or [[the city]]?</tw-passagedata><tw-passagedata pid="4" name="snow" tags="" position="436,745" size="100,100">Snow seems like a good choice. But snow still isn&#39;t soft enough to protect whatever body part I&#39;m planning to land on. 
+I think it&#39;s time to say good bye to my (link: &quot;legs&quot;)[(set: $broken = &quot;legs&quot;)(goto:&quot;landing&quot;)], (link: &quot;arms&quot;)[(set: $broken= &quot;arms&quot;)(goto:&quot;landing&quot;)], or (link: &quot;head&quot;)[(set: $broken = &quot;head&quot;)(goto:&quot;landing&quot;)].</tw-passagedata><tw-passagedata pid="5" name="jungle" tags="" position="902,585" size="100,100">I brace myself for the fall. Luckily the jungle is quite thicc with vines and branches cushioning my fall tremendously.
+I fall and safely land [[//somewhere//|startJungle]]
+
+(set: $hunger to 5)
+(set: $rain to false)
+(set: $rainCounter to 3)
+(set: $tigerChase to false)
+(set: $fireSticks to false)
+(set: $flint to false)
+(set: $chicken to false)
+(set: $tigerCounter to 5)
+(set: $signalFire to false)
+(set: $correctArea to false)
+(set: $success to false)</tw-passagedata><tw-passagedata pid="6" name="the city" tags="" position="565,726" size="100,100">The city, which is clearly made out of concrete. Seems like the most logical place to go. 
+There seems to be doubt within myself, thinking landing on concrete thousands of feet up in the air might not be the best option to [[land towards]]. </tw-passagedata><tw-passagedata pid="7" name="land towards" tags="" position="575,873" size="100,100">Suddenly, epiphany stirkes. In every video games I ever played, whenever I land on water, I survive with no damage or pain. There is a saying, &quot;When you land on water thousands of feet in the air, it will be like landing on concrete&quot; 
+If that is the case, then landing on concrete will be like landing on water, which I always survived in video games. Using the transitive property, I determined that 
+concrete = water = surviving = [[big braining physics]]. </tw-passagedata><tw-passagedata pid="8" name="big braining physics" tags="" position="619,1062" size="100,100">I couldn&#39;t believe how smart I was. With my mind, I definitly could have solved all the world hunger, cancer, or sudoku.
+
+The ground is quickly approaching. I decided to switch to land on my head, since my massive brain can for sure take a hit.
+
+
+Unfortunatly, real-life isn&#39;t like video games and landing on concrete is like landing on concrete.
+
+[[Go Back to Start|start]]</tw-passagedata><tw-passagedata pid="9" name="StartupVariables" tags="" position="440,267" size="100,100">{
+(set: $wrongWay to false)
+(set: $broken to &quot;empty&quot;)
+(set: $sticks to &quot;empty&quot;)
+(set: $counter to 0)
+(set: $badDecisions0 to false)
+(set: $badDecisions1 to false)
+(set: $badDecisions2 to false)
+
+
+(set: $hunger to 5)
+(set: $rain to 0)
+(set: $dry to 0)
+(set: $tigerChase to false)
+(set: $fireSticks to false)
+(set: $flint to false)
+(set: $chicken to false)
+(set: $tigerCounter to 6)
+(set: $signalFire to false)
+}</tw-passagedata><tw-passagedata pid="10" name="landing" tags="" position="440,892" size="100,100">
+.
+..
+...
+....
+
+
+I probably blacked out for a bit. But I&#39;m awake now and my [(print: $broken)] is on fire. It has swollen to the nth degree and is clearly not in the shape its supposed to [[be|directions]]. </tw-passagedata><tw-passagedata pid="11" name="directions" tags="" position="437,1044" size="100,100">(if: $broken is not &quot;head&quot;) [After going through shock and crying from pain for a few minutes, I decided to stop being a lil bitch and find my way to civilization. I look at the sun and see its way in the east, meaning its in the morning.
+I wonder which way is towards civilization: (link: &quot;west&quot;)[(set: $wrongWay = true)(goto:&quot;nextArea&quot;)] or (link: &quot;east&quot;)[(set: $wrongWay = false)(goto:&quot;nextArea&quot;)]]
+
+(else:) [After going through shock and crying from pain for a few minutes, I decided to stop being a lil bitch and find my way to civilization. I look at the sun and notice there are three suns.
+&quot;Something isn&#39;t right here...&quot;
+
+I wonder which way is towards civilization: (link: &quot;weast&quot;)[(set: $wrongWay = true)(goto:&quot;nextArea&quot;)] or (link: &quot;eastttttt&quot;)[(set: $wrongWay = false)(goto:&quot;nextArea&quot;)]]</tw-passagedata><tw-passagedata pid="12" name="nextArea" tags="" position="437,1152" size="100,100">(if: $broken is &quot;legs&quot;)[I crawled through the snow for hours. Progress is slow since my legs aren&#39;t doing very well. 
+I look at the sky, and the sun is nearly setting. Time seems to fly when I&#39;m desperate and in agonizing pain. 
+
+As I crawled, I stumbled upon some sticks. I feel these might be important in the future. I could either use them as a (link: &quot;fire&quot;)[(set: $sticks = &quot;fire&quot;)(goto: &quot;continueOn&quot;)] or as (link: &quot;crutches&quot;)[(set: $sticks = &quot;crutches&quot;)(goto: &quot;continueOn&quot;)]]
+(elseif: $broken is &quot;arms&quot;)[I walked through the snow for a few hours. Feels like I&#39;m making good progress.
+I look at the sky, and the sun nearing afternoon. Good thing people walk on legs and not on arms.
+
+As I walked, I stumbled upon some sticks. I feel these might be important in the future. I could either use them as a (link: &quot;fire&quot;)[(set: $sticks = &quot;fire&quot;)(goto: &quot;continueOn&quot;)] or as (link: &quot;armBraces&quot;)[(set: $sticks = &quot;armBraces&quot;)(goto: &quot;continueOn&quot;)]]
+
+(else:)[I walked thorugh the snow for a few months??... or was it hours? Time didn&#39;t feel right and I have this annoying headache. 
+I look at the sky and the sun said &quot;Top of the morning, hope you had a nutrious breakfast!&quot;
+
+As I walked, I stumbled upon some sticks. I feel these might be important in the future. I could either use them as a (link: &quot;fire&quot;)[(set: $sticks = &quot;fire&quot;)(goto: &quot;continueOn&quot;)] or as (link: &quot;a pretty necklace for my mom&quot;)[set: sticks = &quot;armBraces&quot;)(goto:&quot;continueOn&quot;)]]</tw-passagedata><tw-passagedata pid="13" name="continueOn" tags="" position="434,1262" size="100,100">(if: ($sticks is &quot;fire&quot;) and ($broken is &quot;legs&quot;))[
+	[I miss my legs...
+	
+	Night has finally arrived and it&#39;s pitch black. The night usually doesn&#39;t scare me because I usually have lights, but now... there&#39;s no swtich. It&#39;s only the night and me.
+	I think it&#39;s time to [[use those sticks]], or [[maybe not]]...]]
+(else:)[
+	It seems to be approaching night but there is still plenty of daylight left. There seems to be some [[black dots]] approaching me.]</tw-passagedata><tw-passagedata pid="14" name="use those sticks" tags="" position="592,1371" size="100,100">I could use a toasty fire now.
+
+I pile the sticks I gathered onto the ground somewhere in front. After some trial and error, I managed to get a spark and start a fire. 
+How nice and warm. Just me and the fi[[...]]
+
+
+
+
+</tw-passagedata><tw-passagedata pid="15" name="maybe not" tags="" position="815,1415" size="100,100">Now is probably not the best time because...
+
+
+The wind stopped. It&#39;s eerily silent now...
+^^^^^^^^^^^^^^^^^^^^^^crrr crr^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+
+[[Something&#39;s there]]</tw-passagedata><tw-passagedata pid="16" name="Something&#39;s there" tags="" position="798,1571" size="100,100">&quot;H-h-hello?&quot;
+
+
+
+awOooooooo
+
+Oh... wolves...
+
+[[calm down]]
+
+[[talk]]</tw-passagedata><tw-passagedata pid="17" name="calm down" tags="" position="814,1729" size="100,100">If only I can just tell my body to calm down...
+But the fear was too much. 
+I know it. The wolves know it too well because thats when they all came at me.
+There was no hesitation.
+
+[[YOU DEAD try again|nextArea]]]</tw-passagedata><tw-passagedata pid="18" name="talk" tags="" position="660,1565" size="100,100">(if: $broken is &quot;head&quot;)[Marshmallows are delicious no matter what color they are!
+
+&quot;Nonsense! This human is lying get em!&quot; said one the burnt marshmallows.
+[[YOU DEAD try again|nextArea]]
+]
+
+
+
+(else:)[.
+
+..
+
+...
+
+
+&quot;arf arf&quot;
+Which seems to translate to eat me now.
+[[YOU DEAD try again|nextArea]]]</tw-passagedata><tw-passagedata pid="19" name="..." tags="" position="482,1641" size="100,100">There across the fire pit, a large beast stares at me. It&#39;s coat, pitch black like the night around me and it&#39;s eyes glaring at me. And a face that is oddly familiar.
+
+
+I look around me and there seems to be about seven other wolves.
+
+
+Oh no...
+
+[[pick up a torch]]
+
+[[crawl back slowly]]
+
+[[talk]]</tw-passagedata><tw-passagedata pid="20" name="pick up a torch" tags="" position="445,1778" size="100,100">YOWCH the fire is hot. I&#39;m not touching that
+[[...]]</tw-passagedata><tw-passagedata pid="21" name="crawl back slowly" tags="" position="608,1766" size="100,100">As I move back away from the fire, they approach as well.
+
+
+[[move back more, it seems like the way to go]]
+[[back to the fire|...]]</tw-passagedata><tw-passagedata pid="22" name="move back more, it seems like the way to go" tags="" position="549,1902" size="100,100">As I moved away from the fire, the wolves realized that I wanted them to eat me.
+
+So they did.
+[[YOU DEAD try again|nextArea]]]</tw-passagedata><tw-passagedata pid="23" name="black dots" tags="" position="332,1398" size="100,100">(if: $broken is &quot;head&quot;)[My goodness! It&#39;s a pack of angry burnt marshmallows!
+
+They must be angry since they weren&#39;t cooked properly and now no one wants them! Oh god, the horror!
+
+The sun then said, &quot;You better do something now or there won&#39;t be breakfast tommorow for you!&quot;
+
+The sun is right, don&#39;t want to miss the most important meal of the day.
+[[throw sticks at them]]
+[[talk]]
+[[make myself look like a marshmallow|make myself look bigger]]]
+
+(else:)[Those seem to be...
+
+
+Theres something breathing behind me.
+
+
+
+I turn and a massive wolf is staring at me.
+I froze, the other wolves approach and surround me.
+
+&quot;Clever Girl&quot;
+
+[[throw sticks at them]]
+
+[[talk]]
+
+[[make myself look bigger]]]</tw-passagedata><tw-passagedata pid="24" name="throw sticks at them" tags="" position="444,1523" size="100,100">(if: $broken is &quot;head&quot;)[The marshmallows dodged the sticks. 
+
+After seeing those sticks, they remembered that the sticks were the ones that made them burnt. And they released their anger onto me
+[[YOU DEAD try again|black dots]]]
+
+
+(else:)[The wolves backed up a bit to dodge the sticks.
+
+
+
+
+Huh, what was I expecting?
+
+The wolves then killed me.
+[[YOU DEAD try again|black dots]]]</tw-passagedata><tw-passagedata pid="25" name="make myself look bigger" tags="" position="134,1565" size="100,100">(if: $broken is &quot;head&quot;) [I rose both my arms and spread my legs like a marshmallow. I then shouted &quot;[[I am a Marshmallow|success]]!]
+(else:)[
+(if: $sticks is &quot;fire&quot;)[
+	I tried to raise my arms to make myself bigger but they were not functioning at the moment. Maybe because they were [[broken|black dots]] from the fall a few hours ago?]
+(elseif: $sticks is &quot;armBraces&quot;)[
+	I swung my stiff arms and managed to lock them [[raised up|tryAgain]]. 
+	]
+(else:)[
+	I rose one of my crutches in the air and started [[swinging it around|tryAgain]].]]
+	</tw-passagedata><tw-passagedata pid="26" name="tryAgain" tags="" position="370,1640" size="100,100">The wolves seem unfazed by it...
+
+[[maybe another option?|black dots]]
+
+[[persevere]]</tw-passagedata><tw-passagedata pid="27" name="persevere" tags="" position="250,1724" size="100,100">I start to scream and shout offensive wolf slurs. 
+
+I jump up and down, wailing around the snow. 
+
+[[Is it working?|success]]
+
+[[Maybe try something else?|black dots]]</tw-passagedata><tw-passagedata pid="28" name="success" tags="" position="169,1885" size="100,100">(if: $broken is &quot;head&quot;)[&quot;Oh no! It&#39;s the mighty marshmallow! We best retreat for now!&quot; said one of the marshamallows.
+
+The burnt marshmallows retreated with their unusually fluffy marshmallow tails behinds their legs.
+It was time to [[move on|cave]]]
+
+(else:)[
+The wolves backed off, they clearly assumed they were out matched. They decdied I was not worth their time and they ran off.
+
+
+That may have been the most intense thing I have ever done. Disbelief and relief. It was time to [[continue on|cave]].]</tw-passagedata><tw-passagedata pid="29" name="cave" tags="" position="350,1934" size="100,100">(if: $broken is &quot;head&quot;) [時間流逝，我突然發現一個洞穴。
+Все още остава добра дневна светлина. Jeśli pójdę dalej, powinienem znaleźć miasto [[binnen de dag.|keepGoing]]
+
+Sigana aya langkung awan di langit [[Nokh.|goIn]]
+
+]
+
+(else:)[
+Time ticks away and I suddenly find a cave.
+
+There still seems to be a good amount of daylight left. If I keep going, I should find a city [[within daylight|keepGoing]]. 
+
+There seems to be more clouds in the sky [[though|goIn]].]</tw-passagedata><tw-passagedata pid="30" name=" keepGoing" tags="" position="396,2084" size="100,100"></tw-passagedata><tw-passagedata pid="31" name="goIn" tags="" position="259,2091" size="100,100">(if: $broken is &quot;head&quot;) [That was weird. Luckily, I decided to go in the cave. A blizzard passes through.
+
+It&#39;s a bit cold, should I build a fire?
+[[uh huh]]
+[[nah]]
+]
+
+(else:) [
+I go in the cave.
+
+Few moments later a blizzard passes through.
+
+It&#39;s still cold though, should I build a fire?
+
+[[uh huh]]
+[[nah]]
+]</tw-passagedata><tw-passagedata pid="32" name="yes" tags="" position="363,2232" size="100,100">(if: $broken is &quot;arms&quot;)[That blizzard is coming up fast. Come on feet build that fire [[faster!|FASTER]]]
+(elseif: $broken is &quot;legs&quot;)[Luckily I had my arms intact, making that fire a piece of [[cake|notEnough]].]
+(else:)[I suddenly built a fire on [[myself|notBad]]...]
+</tw-passagedata><tw-passagedata pid="33" name="no" tags="" position="563,2221" size="100,100">Who needs a fire when the fire of determination to live is within me?
+
+
+Unfortunatly, my determiation wasn&#39;t strong enough and I froze to death.
+[[You died try again|keepGoing]]</tw-passagedata><tw-passagedata pid="34" name="FASTER" tags="" position="218,2428" size="100,100">(if: $counter != 4)[[[FASTER FASTER FASTER FASTER FASTER FASTER FASTER FASTER FASTER|FASTER]]
+(set: $counter to it +1)]
+(else:)[(goto:&quot;dead&quot;)]
+</tw-passagedata><tw-passagedata pid="35" name="dead" tags="" position="334,2524" size="100,100">You can&#39;t crawl faster than the blizzard!
+
+[[YOU DEAD try again|snow]]</tw-passagedata><tw-passagedata pid="36" name="notEnough" tags="" position="578,2362" size="100,100">Its still really cold. I&#39;m starting to black out. What should I do...
+
+[[Power Through like a champ|no]]
+
+[[Drastic Measures|fireTime]]</tw-passagedata><tw-passagedata pid="37" name="fireTime" tags="" position="510,2508" size="100,100">You take a stick from the fire and light yourself on [[fire]].</tw-passagedata><tw-passagedata pid="38" name="fire" tags="" position="424,2695" size="100,100">(if: $counter != 4)[[[AHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHH|fire]]
+(set: $counter to it +1)]
+(else:)[(goto:&quot;notBad&quot;)]
+</tw-passagedata><tw-passagedata pid="39" name="notBad" tags="" position="700,2562" size="100,100">(if: $broken is &quot;head&quot;)[Oh no! I&#39;m going turn into a burnt marshmallow if I don&#39;t put this fire out!
+
+&quot;Don&#39;t worry friend!&quot; said the friendly blizzard. &quot;I&#39;ll make sure that doesn&#39;t happen to you! Just relax I&#39;ll make you all not on [[fire|end]]!&quot;
+]
+(else:)[
+Now that I think about it. It&#39;s actually not bad. 
+
+In fact, I feel warm and happy. I think I&#39;ll just go through this blizzard [[while on fire|end]].]</tw-passagedata><tw-passagedata pid="40" name="end" tags="" position="548,2693" size="100,100">(if: $wrongWay is true)[
+	(if: $broken is &quot;head&quot;) [It&#39;s the next day and luckily I&#39;m not a burnt marshmallow. Mr. Blizzard really did save me. 
+	
+	I walked for a couple of seconds and then I suddenly collapse. Was it seconds or days? Either way I think it has been a while since that blizzard. Did I walk the wrong way? Man this headache is really hurting...
+	..
+	..
+	..
+	..
+	..
+	Hikers find my body a few weeks later.
+	[[YOU DEAD try again|snow]]]
+	
+	(else:)[
+	It&#39;s the next day. The blizzard is gone and the fire is out. It&#39;s been a while now and I seem to only seem snow and more snow. 
+	
+	Wasn&#39;t there a city this way? I could&#39;ve swore it was on the left...
+	Or... uhh...
+	
+	
+	
+	...
+	...
+	...
+	Wrong way...
+	
+	
+	...
+	
+	
+	...
+	
+	
+	
+	...
+	
+	
+	Hikers find my body a few weeks later.
+[[YOU DEAD try again|snow]]]]
+(else:)[
+	It&#39;s the next day. The blizzard is gone and the fire is out. 
+	
+	I see it. It&#39;s a road. With cars. I finally made [[it|Winner]].]
+</tw-passagedata><tw-passagedata pid="41" name="uh huh" tags="" position="78,2254" size="100,100">
+(if: $broken is &quot;arms&quot;)[I take my time with the fire and fall [[asleep|end]]]
+(elseif: $broken is &quot;legs&quot;)[I take my time with the fire and fall [[asleep|crawlTowardsDeath]]]
+(else:)[Alright time to light some fire. [[Gently|yes]]]...</tw-passagedata><tw-passagedata pid="42" name="nah" tags="" position="94,2097" size="100,100">Surprise, I died from hypothermia.
+[[YOU DEAD try again|goIn]]</tw-passagedata><tw-passagedata pid="43" name="crawlTowardsDeath" tags="" position="51,2391" size="100,100">It&#39;s the next day. I don&#39;t have my crutches anymore since I burned them. Guess I&#39;m [[back to crawling|secondBlizzard]].</tw-passagedata><tw-passagedata pid="44" name="secondBlizzard" tags="" position="70,2541" size="100,100">I crawled for hours, yet I seem to be making no progress. I look up at the sky and see..... more clouds.
+ 
+ Oh no. I look behind me and a blizzard is rapidly approaching.
+ 
+ [[CRAWL FASTER|FASTER]]</tw-passagedata><tw-passagedata pid="45" name="keepGoing" tags="" position="515,2080" size="100,100">
+
+(if:$broken is &quot;head&quot;)[
+A blizzard approaches. 
+
+[[yes]]
+[[yes]]
+[[yes]]
+[[yes]]
+[[yes]]
+[[yes]]
+[[yes]]
+
+]
+(else:)[
+As I keep going, a blizzard approaches. 
+
+Should I make a fire?
+[[yes]]
+[[no]]
+]</tw-passagedata><tw-passagedata pid="46" name="startJungle" tags="" position="983,727" size="100,100">&lt;!--tiger chasing when get the flint--&gt;
+(if: $tigerChase is true)[
+	(if: $tigerCounter &lt;= 0)[(goto:&quot;jungleDeath&quot;)]
+	(else:)[(set:$tigerCounter -= 1)]]	
+&lt;!--hunger, rain counters, turns it to rain or not, all areas have this--&gt;
+(if: $hunger &lt; 0)[(goto: &quot;jungleDeath&quot;)]
+(if: $rainCounter &lt; -2)[(set: $rainCounter to 3)]
+(if: ($rainCounter &lt;= 0) and ($rainCounter &gt;= -2))[(set: $rain to true)]
+	(else:)[(set: $rain to false)]	
+(if: $rain is true)[(display: &quot;rainingText&quot;)]
+	(else:)[(display: &quot;notRainingText&quot;)]
+&lt;!--can build a fire once have all materaials in all areas.--&gt;
+(if: ($fireSticks is true) and ($flint is true) and ($rain is false)) [I can make a fire now. Should I make a fire here? (link:&quot;&gt;Make Fire&lt;&quot;)[(set: $signalFire to true)(set:$fireSticks to false)(set:$flint to false)]]
+(if: ($signalFire is true) and ($rain is true))[The fire I set earlier has been put out by the rain... (set: $signalFire to false)]
+HUNGER = $hunger
+There&#39;s trees all over the place. It&#39;s a jungle after all. I guess this is where I start to survive...
+(if: $chicken is true)[Eat extra chicken? (link: &quot;&gt;Eat&lt;&quot;)[(set:$hunger to 5)(set: $chicken to false)NOM NOM NOM NOM DELIIIICIOUS]]
+There are some sticks here. Take them?
+(link: &quot;&gt;Take Sticks&lt;&quot;)[(set: $fireSticks to true)]
+
+There are two directions...
+(link: &quot;//A very steep path.//&quot;)[(set: $hunger to $hunger -1)(set:$rainCounter -= 1)(goto:&quot;cliffArea&quot;)]
+(link: &quot;//Deeper into the jungle//&quot;)[(set:$hunger to $hunger-1)(set:$rainCounter -= 1)(goto: &quot;hint0Area&quot;)]</tw-passagedata><tw-passagedata pid="47" name="hint0Area" tags="" position="832,877" size="100,100">(if: $tigerChase is true)[
+	(if: $tigerCounter &lt;= 0)[(goto:&quot;jungleDeath&quot;)]
+	(else:)[(set:$tigerCounter -= 1)]]	
+(if: $hunger &lt; 0)[(goto: &quot;jungleDeath&quot;)]
+(if: $rainCounter &lt; -2)[(set: $rainCounter to 3)]
+(if: ($rainCounter &lt;= 0) and ($rainCounter &gt;= -2))[(set: $rain to true)]
+	(else:)[(set: $rain to false)]	
+(if: $rain is true)[(display: &quot;rainingText&quot;)]
+	(else:)[(display: &quot;notRainingText&quot;)]
+&lt;!--can build a fire once have all materaials in all areas.--&gt;
+(if: ($fireSticks is true) and ($flint is true) and ($rain is false)) [I can make a fire now. Should I make a fire here? (link:&quot;&gt;Make Fire&lt;&quot;)[(set: $signalFire to true)(set:$fireSticks to false)(set:$flint to false)]]
+(if: ($signalFire is true) and ($rain is true))[The fire I set earlier has been put out by the rain... (set: $signalFire to false)]
+HUNGER = $hunger
+(if: $chicken is true)[Eat extra chicken? (link: &quot;&gt;Eat&lt;&quot;)[(set:$hunger to 5)(set: $chicken to false)NOM NOM NOM NOM SCRUMPIDUTIOUS]]
+It&#39;s so green here. The trees continue for miles, all towering over me. There&#39;s some noise towards the slope on the (link: &quot;right&quot;)[(set:$hunger to $hunger-1)(set:$rainCounter -= 1)(goto: &quot;chickenArea&quot;)]
+An old wooden [[&gt;sign&lt;|hint0]] sits across from me. Must have been there for some time.
+Past the sign leads (link: &quot;//deeper into the jungle.//&quot;)[(set: $hunger to $hunger -1)(set:$rainCounter -= 1)(goto:&quot;resecuePoint&quot;)]
+(link: &quot;//Path back to start//&quot;)[(set:$hunger to $hunger-1)(set:$rainCounter -= 1)(goto: &quot;startJungle&quot;)]</tw-passagedata><tw-passagedata pid="48" name="cliffArea" tags="" position="1220,686" size="100,100">(if: $tigerChase is true)[
+	(if: $tigerCounter &lt;= 0)[(goto:&quot;jungleDeath&quot;)]
+	(else:)[(set:$tigerCounter -= 1)]]	
+(if: $hunger &lt; 0)[(goto: &quot;jungleDeath&quot;)]
+(if: $rainCounter &lt; -2)[(set: $rainCounter to 3)]
+(if: ($rainCounter &lt;= 0) and ($rainCounter &gt;= -2))[(set: $rain to true)]
+	(else:)[(set: $rain to false)]	
+(if: $rain is true)[(display: &quot;rainingText&quot;)]
+	(else:)[(display: &quot;notRainingText&quot;)]
+(if: ($fireSticks is true) and ($flint is true) and ($rain is false)) [I can make a fire now. Should I make a fire here? (link:&quot;yes&quot;)[(set: $signalFire to true)(set:$fireSticks to false)(set:$flint to false)]]
+(if: ($signalFire is true) and ($rain is true))[The fire I set earlier has been put out by the rain... (set: $signalFire to false)]
+(if: $chicken is true)[Eat extra chicken? (link: &quot;Yes&quot;)[(set:$hunger to 5)(set: $chicken to false)NOM NOM NOM NOM EXCCCEELLENT]]
+HUNGER = $hunger
+After struggling and tripping, I managed to get down. Climbing back up would be difficult if it were wet...
+There&#39;s just more trees down here. A path opens up (link: &quot;ahead.&quot;)[(set: $hunger to $hunger -1)(set:$rainCounter -= 1)(goto:&quot;hint1Area&quot;)]
+
+(link:&quot;Head back up the cliff.&quot;)[
+	(if: $rain is true)[(display: &quot;tooWet&quot;)]
+	(else:)[(set: $hunger to $hunger -1)(set:$rainCounter -= 1)          	 		 (goto:&quot;startJungle&quot;)]]</tw-passagedata><tw-passagedata pid="49" name="resecuePoint" tags="" position="829,999" size="100,100">(if: $tigerChase is true)[
+	(if: $tigerCounter &lt;= 0)[(goto:&quot;jungleDeath&quot;)]
+	(else:)[(set:$tigerCounter -= 1)]]	
+(if: $hunger &lt; 0)[(goto: &quot;jungleDeath&quot;)]
+(if: $rainCounter &lt; -2)[(set: $rainCounter to 3)]
+(if: ($rainCounter &lt;= 0) and ($rainCounter &gt;= -2))[(set: $rain to true)]
+	(else:)[(set: $rain to false)]	
+(if: $rain is true)[(display: &quot;rainingText&quot;)]
+	(else:)[(display: &quot;notRainingText&quot;)]
+&lt;!--this is the correct area for fire--&gt;
+(if: ($fireSticks is true) and ($flint is true) and ($rain is false)) [I can make a fire now. Should I make a fire here? (link:&quot;&gt;Make Fire&lt;&quot;)[(set: $signalFire to true)(set:$fireSticks to false)(set:$flint to false)(set:$correctArea to true)]]
+(if: ($signalFire is true) and ($rain is true))[The fire I set earlier has been put out by the rain...(set: $signalFire to false)]
+&lt;!--This is the winning condition--&gt;
+(if:($signalFire is true)and($success is true))[(goto:&quot;Winner&quot;)]
+(if: $chicken is true)[Eat extra chicken? (link: &quot;&gt;Eat&lt;&quot;)[(set:$hunger to 5)(set: $chicken to false)NOM NOM NOM NOM YUMMMMMMM]]
+HUNGER = $hunger
+The forest clears out and beyond me lies a giant ravine. 
+The sky is finally visible with the canopy gone.
+There is small cave that leads underground. It doesn&#39;t seem to lead anywhere but it&#39;s good for shelter.
+
+Should I rest in the cave?
+[[&gt;Yes&lt;|waitingTimes]]
+(link: &quot;//Nah, let&#39;s head back//&quot;)[(set:$hunger to $hunger-1)(set:$rainCounter -= 1)(goto: &quot;hint0Area&quot;)]
+[[//Jump in the ravine I wonder what would happen//|theRavine]]</tw-passagedata><tw-passagedata pid="50" name="chickenArea" tags="" position="977,864" size="100,100">(if: $tigerChase is true)[
+	(if: $tigerCounter &gt; 0)[(set: $tigerChase to false)                         (set: $tigerCounter to 5)The tiger is happily devouring the chickens and ignores me.]
+	(else:)[(goto:&quot;jungleDeath&quot;)]]	
+(if: $hunger &lt; 0)[(goto: &quot;jungleDeath&quot;)]
+(if: $rainCounter &lt; -2)[(set: $rainCounter to 3)]
+(if: ($rainCounter &lt;= 0) and ($rainCounter &gt;= -2))[(set: $rain to true)]
+	(else:)[(set: $rain to false)]
+(if: $rain is true)[(display: &quot;rainingText&quot;)]
+	(else:)[(display: &quot;notRainingText&quot;)]	
+(if: ($fireSticks is true) and ($flint is true) and ($rain is false)) [I can make a fire now. Should I make a fire here? (link:&quot;&gt;Make Fire&lt;&quot;)[(set: $signalFire to true)(set:$fireSticks to false)(set:$flint to false)]]
+(if: ($signalFire is true) and ($rain is true))[The fire I set earlier has been put out by the rain...(set: $signalFire to false)]
+HUNGER = $hunger
+The noise turns out to be a bunch of chickens. They approach me warmingly and stare at me with their round cute eyes. They want to be friends.
+Eat them?
+(link:&quot;&gt;No Mercy&lt;&quot;)[(set: $hunger to 5)(goto:&quot;takeExtraChicken&quot;)]
+
+There are other paths here...
+(link: &quot;//A path down//&quot;)[(set: $hunger to $hunger -1)(set:$rainCounter -= 1) (goto:&quot;startJungle&quot;)]
+(link: &quot;//Back//&quot;)[(set:$hunger to $hunger-1)(set:$rainCounter -= 1)          (goto: &quot;hint0Area&quot;)]
+(link: &quot;//some weird hole//&quot;)[(goto: &quot;tunnelToTiger&quot;)]</tw-passagedata><tw-passagedata pid="51" name="hint1Area" tags="" position="1280,840" size="100,100">(if: $tigerChase is true)[
+	(if: $tigerCounter &lt;= 0)[(goto:&quot;jungleDeath&quot;)]
+	(else:)[(set:$tigerCounter -= 1)]]		
+(if: $hunger &lt; 0)[(goto: &quot;jungleDeath&quot;)]
+(if: $rainCounter &lt; -2)[(set: $rainCounter to 3)]
+(if: ($rainCounter &lt;= 0) and ($rainCounter &gt;= -2))[(set: $rain to true)]
+	(else:)[(set: $rain to false)]	
+(if: $rain is true)[(display: &quot;rainingText&quot;)]
+	(else:)[(display: &quot;notRainingText&quot;)]
+(if: ($fireSticks is true) and ($flint is true) and ($rain is false)) [I can make a fire now. Should I make a fire here? (link:&quot;&gt;Make fire&lt;&quot;)[(set: $signalFire to true)(set:$fireSticks to false)(set:$flint to false)]]
+(if:($signalFire is true) and ($rain is true))[The fire I set earlier has been put out by the rain... (set: $signalFire to false)]
+(if: $chicken is true)[Eat extra chicken? (link: &quot;&gt;Eat&lt;&quot;)[(set:$hunger to 5)(set: $chicken to false)NOM NOM NOM NOM WONDERFUL]]
+HUNGER = $hunger
+I&#39;ve entered an area where multiple paths branch out.
+Walking foward, I accidentally disoriented myself and couldn&#39;t remember which path I came from.
+An old [[&gt;sign&lt;|hint1]] is in the middle of this area.
+Which path should I take...
+(link: &quot;//To the right of the sign.//&quot;)[(set: $hunger to $hunger -1)(set:$rainCounter -= 1)          (goto:&quot;tigerDen&quot;)]
+(link: &quot;//The path behind the sign//&quot;)[(set:$hunger to $hunger-1)(set:$rainCounter -= 1)(goto: &quot;deadEnd&quot;)]
+(link: &quot;//Slight left behind the sign//&quot;)[(set:$hunger to $hunger-1)(set:$rainCounter -= 1)(goto: &quot;cliffArea&quot;)]
+(link: &quot;//The path in front of the sign//&quot;)[(set:$hunger to $hunger-1)(set:$rainCounter -= 1)(goto: &quot;path1&quot;)]
+(link: &quot;//The path slight right in front of the sign//&quot;)[(set:$hunger to $hunger-1)(set:$rainCounter -= 1)(goto: &quot;path2&quot;)]
+(link: &quot;//Slight left behind the sign.//&quot;)[(set:$hunger to $hunger-1)(set:$rainCounter -= 1)(goto: &quot;path3&quot;)]</tw-passagedata><tw-passagedata pid="52" name="tigerDen" tags="" position="1113,997" size="100,100">(if: $tigerChase is true)[
+	(if: $tigerCounter &lt;= 0)[(goto:&quot;jungleDeath&quot;)]
+	(else:)[(set:$tigerCounter -= 1)]]	
+(if: $hunger &lt; 0)[(goto: &quot;jungleDeath&quot;)]
+(if: $rainCounter &lt; -2)[(set: $rainCounter to 3)]
+(if: ($rainCounter &lt;= 0) and ($rainCounter &gt;= -2))[(set: $rain to true)]
+	(else:)[(set: $rain to false)]	
+(if: $rain is true)[(display: &quot;rainingText&quot;)]
+	(else:)[(display: &quot;notRainingText&quot;)]	
+(if: ($fireSticks is true)and($flint is true) and ($rain is false)) [I can make a fire now. Should I make a fire here? (link:&quot;&gt;Make fire&lt;&quot;)[(set: $signalFire to true)(set:$fireSticks to false)(set:$flint to false)]]
+(if: ($signalFire is true) and ($rain is true))[The fire you set earlier has been put out by the rain... (set: $signalFire to false)]
+(if: $chicken is true)[Eat extra chicken? (link: &quot;&gt;Eat&lt;&quot;)[(set:$hunger to 5)(set: $chicken to false)NOM NOM NOM NOM OH YES]]
+HUNGER = $hunger
+I entered an open clearing. 
+A ray of light passes through the canopy and shines upon a sleeping tiger. Right next to it is some flint. That could be handy for making a fire but it&#39;s right next to a tiger...
+[[&gt;Go for it&lt;|gettingFlint]]
+
+(link: &quot;//Back into the forest//&quot;)[(set: $hunger to $hunger -1)(set:$rainCounter -= 1)(goto:&quot;hint1Area&quot;)]</tw-passagedata><tw-passagedata pid="53" name="jungleDeath" tags="" position="919,415.5" size="100,100">(if: $hunger &lt; 0)[You got too hungry and died of hunger ¯\_(ツ)_/¯ ]
+(elseif: $tigerChase is true)[The tiger got you and ripped your face off.]
+
+(else:)[You dead]
+
+[[Go Back to Start|start]]
+[[Go Back to Jungle Begiinning|jungle]]</tw-passagedata><tw-passagedata pid="54" name="rainingText" tags="" position="1075,436.5" size="100,100">It&#39;s raining...</tw-passagedata><tw-passagedata pid="55" name="notRainingText" tags="" position="1179,435.5" size="100,100">It&#39;s not raining...</tw-passagedata><tw-passagedata pid="56" name="hint0" tags="" position="842,735" size="100,100">Howdy, I&#39;m an old sign.
+
+Partner, if you want help, you gotta make sure others can see you!
+How would ya do that? With something that rhymes with tire, wire, buyer, higher, desire, provider, putire, gutire, jertire, fermire, eiire, jusire, funire!
+
+Also ya purtty far from people so ya might want to wait a bit.
+Make sure it&#39;s bright and sunny.
+
+Say, ya seen my brother? Say hi for me to him if ya can.
+[[Stop reading the sign|hint0Area]]</tw-passagedata><tw-passagedata pid="57" name="hint1" tags="" position="1087,856" size="100,100">Hello, I&#39;m an old sign. 
+
+Don&#39;t get lost here or you might die. Make sure to have some tasty food with you!
+Also, it rains quite a bit here in this jungle so keep track of that.
+One of these path leads to a deadly creature that holds an important rock.
+That creature tends to follow it&#39;s prey, unless it finds a something better.
+
+So which path to take? Try 13 my friend.
+
+By the way, have you seen my brother? Hope he&#39;s doing alright.
+
+[[Stop reading the sign|hint1Area]]</tw-passagedata><tw-passagedata pid="58" name="waitingTimes" tags="" position="817,1139" size="100,100">How long?
+(link: &quot;1 day&quot;)[(if:($signalFire is true)and($correctArea is true))[(set:$hunger to $hunger-1)(set:$rainCounter -= 1)(set:$success to true)(goto: &quot;resecuePoint&quot;)]
+	(else:)[(set:$hunger to $hunger-1)(set:$rainCounter -= 1)(goto: &quot;resecuePoint&quot;)]]
+
+(link: &quot;2 day&quot;)[(if:($signalFire is true)and($correctArea is true))[(set:$hunger to $hunger-2)(set:$rainCounter -= 2)(set:$success to true)(goto: &quot;resecuePoint&quot;)]
+	(else:)[(set:$hunger to $hunger-2)(set:$rainCounter -= 2)(goto: &quot;resecuePoint&quot;)]]
+
+(link: &quot;3 day&quot;)[(if:($signalFire is true)and($correctArea is true))[(set:$hunger to $hunger-3)(set:$rainCounter -= 3)(set:$success to true)(goto: &quot;resecuePoint&quot;)]
+	(else:)[(set:$hunger to $hunger-3)(set:$rainCounter -= 3)(goto: &quot;resecuePoint&quot;)]]
+
+[[nevermind|resecuePoint]]</tw-passagedata><tw-passagedata pid="59" name="hungerRestored" tags="" position="1423,534.5" size="100,100">NOM NOM NOM NOM YES YES YES! VERY YUMMY</tw-passagedata><tw-passagedata pid="60" name="takeExtraChicken" tags="" position="953,985" size="100,100">NOM NOM NOM NOM YES YES YES! VERY YUMMY
+
+Take an extra chicken to go?
+(link: &quot;yes&quot;)[(set: $chicken to true)(goto:&quot;chickenArea&quot;)]
+[[no|chickenArea]]</tw-passagedata><tw-passagedata pid="61" name="tooWet" tags="" position="1282,435.5" size="100,100">It&#39;s too wet to climb!</tw-passagedata><tw-passagedata pid="62" name="deadEnd" tags="" position="1362,705" size="100,100">(if: $tigerChase is true)[
+	(if: $tigerCounter &lt;= 0)[(goto:&quot;jungleDeath&quot;)]
+	(else:)[(set:$tigerCounter -= 1)]]	
+(if: $hunger &lt; 0)[(goto: &quot;jungleDeath&quot;)]
+(if: $rainCounter &lt; -2)[(set: $rainCounter to 3)]
+(if: ($rainCounter &lt;= 0) and ($rainCounter &gt;= -2))[(set: $rain to true)]
+	(else:)[(set: $rain to false)]	
+(if: $rain is true)[(display: &quot;rainingText&quot;)]
+	(else:)[(display: &quot;notRainingText&quot;)]
+(if: ($fireSticks is true) and ($flint is true) and ($rain is false)) [I can make a fire now. Should I make a fire here? (link:&quot;&gt;Make fire&lt;&quot;)[(set: $signalFire to true)(set:$fireSticks to false)(set:$flint to false)]]
+(if:($signalFire is true) and ($rain is true))[The fire I set earlier has been put out by the rain... (set: $signalFire to false)]
+(if: $chicken is true)[Eat extra chicken? (link: &quot;&gt;Eat&lt;&quot;)[(set:$hunger to 5)(set: $chicken to false)NOM NOM NOM NOM MMMMMMMM]]
+HUNGER = $hunger
+I&#39;ve hit a deadend.
+A giant cliff faces before me with nothing but trees around. 
+There doesn&#39;t seem to be anything here.
+(link: &quot;//Go down the path//&quot;)[(set: $hunger to $hunger -1)(set:$rainCounter -= 1)(goto:&quot;hint1Area&quot;)]</tw-passagedata><tw-passagedata pid="63" name="gettingFlint" tags="" position="1226,1118" size="100,100">(set: $tigerChase to true)
+(set: $flint to true)
+
+I snuck by the tiger and grabbed the flint successfully.
+OH NO! Turns out the tiger just woke up from it&#39;s nap and it looks hungry!
+
+[[Haul Ass|hint1Area]]
+[[No Fear! Fight the tiger|jungleDeath]]</tw-passagedata><tw-passagedata pid="64" name="Winner" tags="" position="889,2334" size="100,100">Luckily a helicopter was able to see me. They came down and resecued me.
+Hurray I get to live for a long time and make a movie about my ultra survival instincts and make a lot of money!!!!
+
+(text-style: &quot;blink&quot;)[$$$$$$$](text-style: &quot;shudder&quot;)[WINNER] (text-style: &quot;shudder&quot;)[WINNER] (text-style: &quot;shudder&quot;)[WINNER] (text-style: &quot;shudder&quot;)[WINNER] (text-style: &quot;shudder&quot;)[WINNER] (text-style: &quot;shudder&quot;)[WINNER](text-style: &quot;shudder&quot;)[WINNER] (text-style: &quot;shudder&quot;)[WINNER](text-style: &quot;blink&quot;)[$$$$$$$]</tw-passagedata><tw-passagedata pid="65" name="theRavine" tags="" position="685,1170" size="100,100">Dictionary result for ravine
+ra·vine
+/rəˈvēn/
+noun
+a deep, narrow gorge with steep sides.
+
+Basically, I just jumped off a giant cliff. 
+
+[[:O|jungleDeath]]</tw-passagedata><tw-passagedata pid="66" name="path6" tags="" position="1546,1091.5" size="100,100">(if: $tigerChase is true)[
+	(if: $tigerCounter &lt;= 0)[(goto:&quot;jungleDeath&quot;)]
+	(else:)[(set:$tigerCounter -= 1)]]	
+(if: $hunger &lt; 0)[(goto: &quot;jungleDeath&quot;)]
+(if: $rainCounter &lt; -2)[(set: $rainCounter to 3)]
+(if: ($rainCounter &lt;= 0) and ($rainCounter &gt;= -2))[(set: $rain to true)]
+	(else:)[(set: $rain to false)]	
+(if: $rain is true)[(display: &quot;rainingText&quot;)]
+	(else:)[(display: &quot;notRainingText&quot;)]
+(if: $chicken is true)[Eat extra chicken? (link: &quot;&gt;Eat&lt;&quot;)[(set:$hunger to 5)(set: $chicken to false)NOM NOM NOM NOM MMMMMMMM]]
+HUNGER = $hunger
+
+Disaster! I&#39;m lost!
+[[//this way?//|hint1Area]]
+[[//that way?//|path4]]
+[[//uhhh//|path3]]
+[[//errrr//|path2]]</tw-passagedata><tw-passagedata pid="67" name="path1" tags="" position="1430,851.5" size="100,100">(if: $tigerChase is true)[
+	(if: $tigerCounter &lt;= 0)[(goto:&quot;jungleDeath&quot;)]
+	(else:)[(set:$tigerCounter -= 1)]]	
+(if: $hunger &lt; 0)[(goto: &quot;jungleDeath&quot;)]
+(if: $rainCounter &lt; -2)[(set: $rainCounter to 3)]
+(if: ($rainCounter &lt;= 0) and ($rainCounter &gt;= -2))[(set: $rain to true)]
+	(else:)[(set: $rain to false)]	
+(if: $rain is true)[(display: &quot;rainingText&quot;)]
+	(else:)[(display: &quot;notRainingText&quot;)]
+(if: $chicken is true)[Eat extra chicken? (link: &quot;&gt;Eat&lt;&quot;)[(set:$hunger to 5)(set: $chicken to false)NOM NOM NOM NOM MMMMMMMM]]
+HUNGER = $hunger
+
+Disaster! I&#39;m lost!
+[[//this way?//|path5]]
+[[//that way?//|path4]]
+[[//uhhh//|path2]]</tw-passagedata><tw-passagedata pid="68" name="path3" tags="" position="1409,1141.5" size="100,100">(if: $tigerChase is true)[
+	(if: $tigerCounter &lt;= 0)[(goto:&quot;jungleDeath&quot;)]
+	(else:)[(set:$tigerCounter -= 1)]]	
+(if: $hunger &lt; 0)[(goto: &quot;jungleDeath&quot;)]
+(if: $rainCounter &lt; -2)[(set: $rainCounter to 3)]
+(if: ($rainCounter &lt;= 0) and ($rainCounter &gt;= -2))[(set: $rain to true)]
+	(else:)[(set: $rain to false)]	
+(if: $rain is true)[(display: &quot;rainingText&quot;)]
+	(else:)[(display: &quot;notRainingText&quot;)]
+(if: $chicken is true)[Eat extra chicken? (link: &quot;&gt;Eat&lt;&quot;)[(set:$hunger to 5)(set: $chicken to false)NOM NOM NOM NOM MMMMMMMM]]
+HUNGER = $hunger
+
+Disaster! I&#39;m lost!
+[[//this way?//|path2]]
+[[//that way?//|path6]]</tw-passagedata><tw-passagedata pid="69" name="path2" tags="" position="1343,996.5" size="100,100">(if: $tigerChase is true)[
+	(if: $tigerCounter &lt;= 0)[(goto:&quot;jungleDeath&quot;)]
+	(else:)[(set:$tigerCounter -= 1)]]	
+(if: $hunger &lt; 0)[(goto: &quot;jungleDeath&quot;)]
+(if: $rainCounter &lt; -2)[(set: $rainCounter to 3)]
+(if: ($rainCounter &lt;= 0) and ($rainCounter &gt;= -2))[(set: $rain to true)]
+	(else:)[(set: $rain to false)]	
+(if: $rain is true)[(display: &quot;rainingText&quot;)]
+	(else:)[(display: &quot;notRainingText&quot;)]
+(if: $chicken is true)[Eat extra chicken? (link: &quot;&gt;Eat&lt;&quot;)[(set:$hunger to 5)(set: $chicken to false)NOM NOM NOM NOM MMMMMMMM]]
+HUNGER = $hunger
+
+Disaster! I&#39;m lost!
+[[//this way?//|path3]]
+[[//that way?//|path1]]
+</tw-passagedata><tw-passagedata pid="70" name="path4" tags="" position="1548,749.5" size="100,100">(if: $tigerChase is true)[
+	(if: $tigerCounter &lt;= 0)[(goto:&quot;jungleDeath&quot;)]
+	(else:)[(set:$tigerCounter -= 1)]]	
+(if: $hunger &lt; 0)[(goto: &quot;jungleDeath&quot;)]
+(if: $rainCounter &lt; -2)[(set: $rainCounter to 3)]
+(if: ($rainCounter &lt;= 0) and ($rainCounter &gt;= -2))[(set: $rain to true)]
+	(else:)[(set: $rain to false)]	
+(if: $rain is true)[(display: &quot;rainingText&quot;)]
+	(else:)[(display: &quot;notRainingText&quot;)]
+(if: $chicken is true)[Eat extra chicken? (link: &quot;&gt;Eat&lt;&quot;)[(set:$hunger to 5)(set: $chicken to false)NOM NOM NOM NOM MMMMMMMM]]
+HUNGER = $hunger
+
+Disaster! I&#39;m lost!
+[[//this way?//|hint1Area]]
+[[//that way?//|path5]]
+[[//uhhh//|deadEnd]]</tw-passagedata><tw-passagedata pid="71" name="path5" tags="" position="1614,944.5" size="100,100">(if: $tigerChase is true)[
+	(if: $tigerCounter &lt;= 0)[(goto:&quot;jungleDeath&quot;)]
+	(else:)[(set:$tigerCounter -= 1)]]	
+(if: $hunger &lt; 0)[(goto: &quot;jungleDeath&quot;)]
+(if: $rainCounter &lt; -2)[(set: $rainCounter to 3)]
+(if: ($rainCounter &lt;= 0) and ($rainCounter &gt;= -2))[(set: $rain to true)]
+	(else:)[(set: $rain to false)]	
+(if: $rain is true)[(display: &quot;rainingText&quot;)]
+	(else:)[(display: &quot;notRainingText&quot;)]
+(if: $chicken is true)[Eat extra chicken? (link: &quot;&gt;Eat&lt;&quot;)[(set:$hunger to 5)(set: $chicken to false)NOM NOM NOM NOM MMMMMMMM]]
+HUNGER = $hunger
+
+Disaster! I&#39;m lost!
+[[//this way?//|path6]]
+[[//that way?//|path1]]
+[[//uhhh//|path2]]</tw-passagedata><tw-passagedata pid="72" name="tunnelToTiger" tags="" position="1059,1141.5" size="100,100">ZOOOOOooooooMMMM
+FRMMMMMMMMMMmmmMMMMmmmMM
+
+I fell down this like a water slide
+
+I go through twists and turns letting gravity guide me to where ever this hole is taking me.
+
+
+
+
+I finally see an [[opening|tigerDen]]...</tw-passagedata></tw-storydata>
